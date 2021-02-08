@@ -20,6 +20,7 @@ class Migration(migrations.Migration):
                 ('icono', models.CharField(max_length=200)),
             ],
         ),
+
         migrations.CreateModel(
             name='Deportista',
             fields=[
@@ -78,5 +79,17 @@ class Migration(migrations.Migration):
             model_name='deporte',
             name='modalidad',
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='olimpicos.modalidad'),
+        ),
+        migrations.CreateModel(
+            name='Comentario',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('contenido', models.CharField(max_length=500)),
+                ('fecha', models.TimeField()),
+                ('evento', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='olimpicos.evento')),
+                ('estudiante', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='olimpicos.estudiante')),
+
+            ],
+
         ),
     ]
