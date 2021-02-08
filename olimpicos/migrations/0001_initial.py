@@ -80,15 +80,15 @@ class Migration(migrations.Migration):
             name='modalidad',
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='olimpicos.modalidad'),
         ),
+
         migrations.CreateModel(
-            name='Comentario',
+            name='comentario',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('contenido', models.CharField(max_length=500)),
                 ('fecha', models.TimeField()),
                 ('evento', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='olimpicos.evento')),
                 ('estudiante', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='olimpicos.estudiante')),
-
             ],
 
         ),
