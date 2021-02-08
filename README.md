@@ -1,9 +1,9 @@
 # Entrega 1 Apropiación Tecnologica
 
-David Guillermo Fonseca Ramirez
-Leonardo Mejia Bustos
-Oscar Julian Castañeda
-Alejandro Pedraza Lopez
+David Guillermo Fonseca Ramirez - 
+Leonardo Mejia Bustos - 
+Oscar Julian Castañeda - 
+Alejandro Pedraza Lopez - 
 
 # Modelo UML relacional
 
