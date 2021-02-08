@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.
 
 from .models import (
-    Modalidad, Deporte, Deportista, Evento, Estudiante, Participacion
+    Modalidad, Deporte, Deportista, Evento, Estudiante, Participacion, Comentario
 )
 
 admin.site.register(Modalidad)
@@ -12,3 +12,4 @@ admin.site.register(Deportista)
 admin.site.register(Evento)
 admin.site.register(Estudiante)
 admin.site.register(Participacion)
+admin.site.register(Comentario)
