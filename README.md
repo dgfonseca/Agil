@@ -7,4 +7,4 @@ Alejandro Pedraza Lopez -
 
 # Modelo UML relacional
 
-[Modelo UML](i.imgur.com/2pnACgd.jpg)
+Link Modelo UML: https://i.imgur.com/2pnACgd.jpg
