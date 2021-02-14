@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<form method="post" action="" onsubmit="return sendForm();">
+    <input id="username" name="username" type="text" placeholder="Usuario"/><br/>
+    <input id="first_name" name="firs_name" type="text" placeholder="Nombre"/><br/>
+    <input id="last_name" name="last_name" type="text" placeholder="Apellido"/><br/>
+    <input id="email" name="email" type="email" placeholder="ejemplo@correo.com"/><br/>
+    <input id="password" name="password" type="password"/><br/>
+    <input id="password2" name="password2" type="password"/><br/>
+    <input id="send" name="send" type="submit" value="Registrar"/>
+    <a href="http://127.0.0.1:8000/home/deportistas">Cancelar</a>
+</form>
+<script>
+    function sendForm() {
+        if($('#password').val() != $('#password2').val()){
+            alert('Las contraseñas no son iguales');
+            return false;
+        }
+        $.ajax({
+            type:"POST",
+            url: "http://127.0.0.1:8000/home/addUser/",
+            data: JSON.stringify({'username':$('#username').val(), 'first_name':$('#first_name').val(), 'last_name':$('#last_name').val(), 'password':$('#password').val(), 'email':$('#email').val()}),
+            contentType: "application/json; charset=utf-8",
+            dataType:"json",
+            success: function(data){
+                alert("Usuario registrado: "+ $("#username").val());
+                window.location = "http://127.0.0.1:8000/home/deportistas";
+            },
+            failure: function(errMsg)
+            {
+                print("Problema")
+                alert("Se presentó un problema");
+            }
+        });
+        return false
+    }
+</script>
+</body>
+</html>

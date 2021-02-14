@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<label id="message"></label>
+<br/>
+<br/>
+<form method="post" action="" onsubmit="return sendForm();">
+    Usuario
+    <input id="username" name="username" type="text" placeholder="Usuario"><br/>
+    Contraseña
+    <input id="password" name="password" type="password"><br/>
+    <input id="send" name="send" type="submit" value="login"/>
+    <a href="http://127.0.0.1:8000/home/deportistas/">Cancelar</a>
+</form>
+<script>
+    function sendForm()
+    {
+        $.ajax({
+            type:"POST",
+            url:"http://127.0.0.1:8000/home/login/",
+            data: JSON.stringify({'username':$('#username').val(), 'password':$('#password').val()}),
+            contentType: "application/json; charset=utf-8",
+            dataType:"json",
+            success: function(data)
+            {
+                if(data.message=="Ok")
+                {
+                    window.location = "http://127.0.0.1:8000/home/deportistas/";
+                }
+                else{
+                    alert("Se presento un error en el login");
+                }
+            },
+            failure: function(errMsg){
+                alert("Se presentó un problema al realizar el login");
+            }
+        });
+        return false;
+    }
+</script>
+</body>
+</html>
