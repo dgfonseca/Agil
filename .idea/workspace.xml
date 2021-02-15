@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4371277-e7e2-4e84-9525-b2ac4ad2617c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apropiacion_tecnologica/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/apropiacion_tecnologica/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/olimpicos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/olimpicos/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/olimpicos/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/olimpicos/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,11 +18,32 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apropiacion_tecnologica/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+            <state relative-caret-position="237">
+              <caret line="141" column="1" selection-start-line="141" selection-start-column="1" selection-end-line="141" selection-end-column="1" />
               <folding>
                 <element signature="e#324#348#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/olimpicos/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="40" column="72" lean-forward="true" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/olimpicos/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -47,13 +71,13 @@
         <option value="$PROJECT_DIR$/olimpicos/admin.py" />
         <option value="$PROJECT_DIR$/apropiacion_tecnologica/templates/index.html" />
         <option value="$PROJECT_DIR$/olimpicos/templates/deportistas.html" />
-        <option value="$PROJECT_DIR$/olimpicos/models.py" />
         <option value="$PROJECT_DIR$/apropiacion_tecnologica/urls.py" />
         <option value="$PROJECT_DIR$/olimpicos/templates/register.html" />
         <option value="$PROJECT_DIR$/olimpicos/views.py" />
         <option value="$PROJECT_DIR$/olimpicos/templates/login.html" />
         <option value="$PROJECT_DIR$/olimpicos/urls.py" />
         <option value="$PROJECT_DIR$/olimpicos/templates/index.html" />
+        <option value="$PROJECT_DIR$/olimpicos/models.py" />
         <option value="$PROJECT_DIR$/apropiacion_tecnologica/settings.py" />
       </list>
     </option>
@@ -82,6 +106,17 @@
               <item name="apropiacion_tecnologica" type="b2602c69:ProjectViewProjectNode" />
               <item name="apropiacion_tecnologica" type="462c0819:PsiDirectoryNode" />
               <item name="apropiacion_tecnologica" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="apropiacion_tecnologica" type="b2602c69:ProjectViewProjectNode" />
+              <item name="apropiacion_tecnologica" type="462c0819:PsiDirectoryNode" />
+              <item name="olimpicos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="apropiacion_tecnologica" type="b2602c69:ProjectViewProjectNode" />
+              <item name="apropiacion_tecnologica" type="462c0819:PsiDirectoryNode" />
+              <item name="olimpicos" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -160,18 +195,19 @@
       <workItem from="1612740235207" duration="6529000" />
       <workItem from="1613270744764" duration="14481000" />
       <workItem from="1613319904333" duration="7937000" />
-      <workItem from="1613329468786" duration="5659000" />
+      <workItem from="1613329468786" duration="6678000" />
+      <workItem from="1613350215824" duration="299000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36515000" />
+    <option name="totallyTimeSpent" value="37833000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12859304" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1301059" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -185,7 +221,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.396072" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.39443535" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -272,13 +308,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/olimpicos/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apropiacion_tecnologica/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -303,13 +332,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/olimpicos/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/olimpicos/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="83">
@@ -317,13 +339,6 @@
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/olimpicos/templates/deportistas.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -337,10 +352,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/olimpicos/templates/deportistas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/olimpicos/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="40" column="72" lean-forward="true" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/olimpicos/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apropiacion_tecnologica/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        <state relative-caret-position="237">
+          <caret line="141" column="1" selection-start-line="141" selection-start-column="1" selection-end-line="141" selection-end-column="1" />
           <folding>
             <element signature="e#324#348#0" expanded="true" />
           </folding>

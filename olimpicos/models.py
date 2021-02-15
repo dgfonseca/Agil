@@ -37,8 +37,8 @@ class Deportista(models.Model):
     peso = models.FloatField()
     estatura = models.FloatField()
     entrenador = models.CharField(max_length=100)
-    foto = models.CharField(max_length=200, null=True)
-    image = models.ImageField(upload_to='static', null=True)
+    foto = models.CharField(max_length=200, null=True, blank=True)
+    image = models.ImageField(upload_to='static', null=True, blank=True)
 
     def __str__(self):
         return 'deportista:' + self.nombre + ' ' + self.apellido
