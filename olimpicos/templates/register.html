@@ -104,7 +104,7 @@
                                 <input class="is-fullwidth button is-block is-info is-large"id="send" name="send" type="submit" value="login"/>
                             </div>
                             <div class="column is-half ">
-                                <a class="is-fullwidth button is-block is-danger is-large" href="http://127.0.0.1:8000/home/deportistas/">Cancelar</a>
+                                <a class="is-fullwidth button is-block is-danger is-large" href="https://agilesappandes.herokuapp.com/home/deportistas/">Cancelar</a>
                             </div>
                         </div>
                     </form>
@@ -121,13 +121,13 @@
         }
         $.ajax({
             type:"POST",
-            url: "http://127.0.0.1:8000/home/addUser/",
+            url: "https://agilesappandes.herokuapp.com/home/addUser/",
             data: JSON.stringify({'username':$('#username').val(), 'first_name':$('#first_name').val(), 'last_name':$('#last_name').val(), 'password':$('#password').val(), 'email':$('#email').val()}),
             contentType: "application/json; charset=utf-8",
             dataType:"json",
             success: function(data){
                 alert("Usuario registrado: "+ $("#username").val());
-                window.location = "http://127.0.0.1:8000/home/deportistas";
+                window.location = "https://agilesappandes.herokuapp.com/home/deportistas";
             },
             failure: function(errMsg)
             {

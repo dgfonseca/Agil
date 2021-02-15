@@ -74,7 +74,7 @@
                   <div class="column is-half">
                     <a
                       class="is-fullwidth button is-block is-danger is-large"
-                      href="http://127.0.0.1:8000/home/deportistas/"
+                      href="https://agilesappandes.herokuapp.com/home/deportistas/"
                       >Cancelar</a
                     >
                   </div>
@@ -90,7 +90,7 @@
       function sendForm() {
         $.ajax({
           type: "POST",
-          url: "http://127.0.0.1:8000/home/login/",
+          url: "https://agilesappandes.herokuapp.com/home/login/",
           data: JSON.stringify({
             username: $("#username").val(),
             password: $("#password").val(),
@@ -99,7 +99,7 @@
           dataType: "json",
           success: function (data) {
             if (data.message == "Ok") {
-              window.location = "http://127.0.0.1:8000/home/deportistas/";
+              window.location = "https://agilesappandes.herokuapp.com/home/deportistas/";
             } else {
               alert("Se presento un error en el login");
             }
