@@ -15,6 +15,7 @@
           <div class="container">
             <div id="navbarMenuHeroA" class="navbar-menu">
               <div class="navbar-end">
+                  <a class="navbar-item">Colombia tokio 2020</a>
                 <a
                   href="{% url 'deportista:deportistas' %}"
                   class="navbar-item"
@@ -35,9 +36,9 @@
           </div>
         </nav>
       </div>
+              <h1 align="center">Deportistas</h1>
       <div class="hero-body">
         <div class="container has-text-centered">
-          <h1 align="center">Deportistas</h1>
           <div class="container">
             <div class="row">
               {% for deportista in deportistas_list %}
