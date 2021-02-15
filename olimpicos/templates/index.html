@@ -33,7 +33,7 @@
     <div class="row">
 {% for deportista in deportistas_list %}
     <div class="col-sm">
-    {% if deportista.image == null %}
+    {% if deportista.image == "" %}
 
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" alt="Card image cap" src={{ deportista.foto }}>
