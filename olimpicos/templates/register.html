@@ -4,18 +4,115 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href="/static/css/bulma.css" rel="stylesheet">
 </head>
 <body>
-<form method="post" action="" onsubmit="return sendForm();">
-    <input id="username" name="username" type="text" placeholder="Usuario"/><br/>
-    <input id="first_name" name="firs_name" type="text" placeholder="Nombre"/><br/>
-    <input id="last_name" name="last_name" type="text" placeholder="Apellido"/><br/>
-    <input id="email" name="email" type="email" placeholder="ejemplo@correo.com"/><br/>
-    <input id="password" name="password" type="password"/><br/>
-    <input id="password2" name="password2" type="password"/><br/>
-    <input id="send" name="send" type="submit" value="Registrar"/>
-    <a href="http://127.0.0.1:8000/home/deportistas">Cancelar</a>
-</form>
+<section class="hero is-fullheight is-dark">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div id="navbarMenuHeroA" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a href="{% url 'deportista:deportistas' %}" class="navbar-item">
+                            Inicio
+                        </a>
+                        <a  href="{% url 'deportista:loginUser' %}" class="navbar-item">
+                            Login
+                        </a>
+                        <a href="{% url 'deportista:registrarUsuario' %}" class="navbar-item">
+                            Sign Up
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="column is-4 is-offset-4">
+                <h3 class="title">Registro</h3>
+                <div class="box is-dark">
+                    <form method="post" action="" onsubmit="return sendForm();">
+                        <div class="field">
+                            <div class="control">
+                                <input
+                                        class="input is-medium"
+                                        type="text"
+                                        id="username"
+                                        name="username"
+                                        placeholder="Usuario"
+                                />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input
+                                        class="input is-medium"
+                                        type="text"
+                                        id="first_name"
+                                        name="firs_name"
+                                        placeholder="Nombre"
+                                />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input
+                                        class="input is-medium"
+                                        type="text"
+                                        id="last_name"
+                                        name="last_name"
+                                        placeholder="Apellido"
+                                />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input
+                                        class="input is-medium"
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="ejemplo@correo.com"
+                                />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input
+                                        class="input is-medium"
+                                        type="password"
+                                        id="password2"
+                                        name="password2"
+                                        placeholder="Contraseña"
+                                />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input
+                                        class="input is-medium"
+                                        type="password"
+                                        id="password"
+                                        name="password"
+                                        placeholder="Comprobación de contraseña"
+                                />
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column is-half ">
+                                <input class="is-fullwidth button is-block is-info is-large"id="send" name="send" type="submit" value="login"/>
+                            </div>
+                            <div class="column is-half ">
+                                <a class="is-fullwidth button is-block is-danger is-large" href="http://127.0.0.1:8000/home/deportistas/">Cancelar</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <script>
     function sendForm() {
         if($('#password').val() != $('#password2').val()){

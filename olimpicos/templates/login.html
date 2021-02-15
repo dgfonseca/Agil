@@ -1,47 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Login</title>
+    <link href="/static/css/bulma.css" rel="stylesheet" />
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-</head>
-<body>
-<label id="message"></label>
-<br/>
-<br/>
-<form method="post" action="" onsubmit="return sendForm();">
-    Usuario
-    <input id="username" name="username" type="text" placeholder="Usuario"><br/>
-    Contraseña
-    <input id="password" name="password" type="password"><br/>
-    <input id="send" name="send" type="submit" value="login"/>
-    <a href="http://127.0.0.1:8000/home/deportistas/">Cancelar</a>
-</form>
-<script>
-    function sendForm()
-    {
+  </head>
+  <body>
+    <section class="hero is-fullheight is-dark">
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div id="navbarMenuHeroA" class="navbar-menu">
+              <div class="navbar-end">
+                <a
+                  href="{% url 'deportista:deportistas' %}"
+                  class="navbar-item"
+                >
+                  Inicio
+                </a>
+                <a href="{% url 'deportista:loginUser' %}" class="navbar-item">
+                  Login
+                </a>
+                <a
+                  href="{% url 'deportista:registrarUsuario' %}"
+                  class="navbar-item"
+                >
+                  Sign Up
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="column is-4 is-offset-4">
+            <h3 class="title">Login</h3>
+            <div class="box is-dark">
+              <form method="post" action="" onsubmit="return sendForm();">
+                <div class="field">
+                  <div class="control">
+                    <input
+                      class="input is-medium"
+                      type="text"
+                      id="username"
+                      name="username"
+                      placeholder="Usuario"
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="control">
+                    <input
+                      class="input is-medium"
+                      type="password"
+                      id="password"
+                      name="password"
+                      placeholder="Password"
+                    />
+                  </div>
+                </div>
+                <div class="columns">
+                  <div class="column is-half">
+                    <input
+                      class="is-fullwidth button is-block is-info is-large"
+                      id="send"
+                      name="send"
+                      type="submit"
+                      value="login"
+                    />
+                  </div>
+                  <div class="column is-half">
+                    <a
+                      class="is-fullwidth button is-block is-danger is-large"
+                      href="http://127.0.0.1:8000/home/deportistas/"
+                      >Cancelar</a
+                    >
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function sendForm() {
         $.ajax({
-            type:"POST",
-            url:"http://127.0.0.1:8000/home/login/",
-            data: JSON.stringify({'username':$('#username').val(), 'password':$('#password').val()}),
-            contentType: "application/json; charset=utf-8",
-            dataType:"json",
-            success: function(data)
-            {
-                if(data.message=="Ok")
-                {
-                    window.location = "http://127.0.0.1:8000/home/deportistas/";
-                }
-                else{
-                    alert("Se presento un error en el login");
-                }
-            },
-            failure: function(errMsg){
-                alert("Se presentó un problema al realizar el login");
+          type: "POST",
+          url: "http://127.0.0.1:8000/home/login/",
+          data: JSON.stringify({
+            username: $("#username").val(),
+            password: $("#password").val(),
+          }),
+          contentType: "application/json; charset=utf-8",
+          dataType: "json",
+          success: function (data) {
+            if (data.message == "Ok") {
+              window.location = "http://127.0.0.1:8000/home/deportistas/";
+            } else {
+              alert("Se presento un error en el login");
             }
+          },
+          failure: function (errMsg) {
+            alert("Se presentó un problema al realizar el login");
+          },
         });
         return false;
-    }
-</script>
-</body>
+      }
+    </script>
+  </body>
 </html>
