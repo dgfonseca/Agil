@@ -39,7 +39,18 @@
         <img class="card-img-top" alt="Card image cap" src={{ deportista.foto }}>
         <div class="card-body">
             <h5 class="card-title">{{ deportista.nombre }} {{ deportista.apellido }}</h5>
-            <p class="card-text">{{ deportista.peso }}</p>
+            <div class="container">
+            <div class="row">
+            {% for participacion in participaciones_list %}
+                {% if participacion.deportista.id == deportista.id %}
+                    <div class="col-sm">
+                        <img class="card-img-bottom" alt="Card image cap" style="height: 50px;width: 50px" src={{ participacion.deporte.icono }}>
+                        <p class="card-text">{{ participacion.deporte.nombre }}</p >
+                    </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
             <a href="#" class="btn btn-primary">Mas información</a>
         </div>
     </div>
