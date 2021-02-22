@@ -3,16 +3,16 @@
   <div class="column">
   <a href='{% url "participaciones" %}'></a>
     <div class="columns is-centered">
-      {% if deportista.foto %}
+      {% if deportista.image == "" %}
       <div class="column">
         <figure class="image is-256x256">
-          <img src="/{{ deportista.image }}" />
+          <img src="{{ deportista.foto }}" />
         </figure>
       </div>
       {% else %}
       <div class="column">
         <figure class="image is-256x256">
-          <img src="{{ deportista.foto }}" />
+          <img src="{{ deportista.image }}" />
         </figure>
       </div>
       {% endif %}
