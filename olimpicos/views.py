@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Deportista, DeportistaForm, Participacion
+from .models import Deportista, DeportistaForm, Participacion, Evento
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
@@ -77,4 +77,7 @@ class DeportistaDetailView(generic.DetailView):
         context = super(DeportistaDetailView, self).get_context_data(**kwargs)
         context['participacion_list'] = Participacion.objects.all()
         return context
+
+class EventoDetailView(generic.DetailView):
+    model = Evento
 

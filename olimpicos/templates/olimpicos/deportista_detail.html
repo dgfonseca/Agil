@@ -12,7 +12,7 @@
       {% else %}
       <div class="column">
         <figure class="image is-256x256">
-          <img src="{{ deportista.image }}" />
+          <img src="/{{ deportista.image }}" />
         </figure>
       </div>
       {% endif %}
@@ -87,7 +87,7 @@
             <td>{{ participacion.deporte.modalidad }}</td>
             <td>{{ participacion.resultado }}</td>
             <td>
-              <a href="/"><i class="fab fa-youtube"></i></a>
+              <a href="{{ participacion.evento.get_absolute_url }}">Video</a>
             </td>
           {% endif %}
           </tr>

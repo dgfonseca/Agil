@@ -12,5 +12,6 @@ urlpatterns = [
     url(r'^logout/$', views.logout_view, name='logout'),
     url(r'^deportista/(?P<pk>\d+)$', views.DeportistaDetailView.as_view(), name='deportistaDetail'),
     url(r'participaciones/', views.participaciones, name='participaciones'),
+    url(r'êvento/(?P<pk>\d+)$',views.EventoDetailView.as_view(), name="eventoDetail"),
 
 ]

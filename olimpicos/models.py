@@ -27,6 +27,8 @@ class Evento(models.Model):
 
     def __str__(self):
         return 'evento: ' + self.nombre + ' video: ' + self.video
+    def get_absolute_url(self):
+        return reverse('eventoDetail', args=[str(self.id)])
 
 
 class Deportista(models.Model):
