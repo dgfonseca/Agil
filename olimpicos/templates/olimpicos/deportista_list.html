@@ -17,16 +17,16 @@
               <div class="navbar-end">
                   <a class="navbar-item">Colombia tokio 2020</a>
                 <a
-                  href="{% url 'deportista:deportistas' %}"
+                  href="{% url 'deportistas'%}"
                   class="navbar-item"
                 >
                   Inicio
                 </a>
-                <a href="{% url 'deportista:loginUser' %}" class="navbar-item">
+                <a href="{% url 'loginUser' %}" class="navbar-item">
                   Login
                 </a>
                 <a
-                  href="{% url 'deportista:registrarUsuario' %}"
+                  href="{% url 'registrarUsuario' %}"
                   class="navbar-item"
                 >
                   Sign Up
@@ -41,7 +41,7 @@
         <div class="container has-text-centered">
           <div class="container">
             <div class="row">
-              {% for deportista in deportistas_list %}
+              {% for deportista in deportista_list %}
               <div class="col-sm">
                 {% if deportista.image == "" %}
 
@@ -73,7 +73,7 @@
                         {% endif %} {% endfor %}
                       </div>
                     </div>
-                    <a href="#" class="btn btn-primary">Mas informaciÃ³n</a>
+                    <a href="{{ deportista.get_absolute_url }}" class="btn btn-primary">Mas informacion</a>
                   </div>
                 </div>
                 {% else %}
@@ -106,7 +106,7 @@
                         {% endif %} {% endfor %}
                       </div>
                     </div>
-                    <a href="#" class="btn btn-primary">Mas informaciÃ³n</a>
+                    <a href="{{  deportista.get_absolute_url }}" class="btn btn-primary">Mas informacion</a>
                   </div>
                 </div>
                 {% endif %}

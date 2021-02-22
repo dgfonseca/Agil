@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.forms import ModelForm
+from django.urls import reverse
 
 
 # Create your models here.
@@ -42,6 +43,12 @@ class Deportista(models.Model):
 
     def __str__(self):
         return 'deportista:' + self.nombre + ' ' + self.apellido
+
+    def get_absolute_url(self):
+        return reverse('deportistaDetail', args=[str(self.id)])
+
+
+
 
 
 class DeportistaForm(ModelForm):

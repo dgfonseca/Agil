@@ -7,27 +7,22 @@ from django.contrib.auth.models import User
 import json
 from django.core import serializers
 from django.contrib.auth import authenticate, login, logout
+from django.views import generic
 
 
 
 
-# Create your views here.
-def deportistas(request):
-    deportistas_list = Deportista.objects.all()
+
+class DeportistaListView(generic.ListView):
+    model = Deportista
+
+def participaciones(request):
     participaciones_list = Participacion.objects.all()
-    context = {'deportistas_list': deportistas_list, 'participaciones_list': participaciones_list}
-    return render(request, 'index.html', context)
+    context = {'participacion_list':participaciones_list}
+    return render(request,'olimpicos/deportista_detail.html',context)
 
 
-def add_deportista(request):
-    if request.method == 'POST':
-        form = DeportistaForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(reverse('deportista:deportistas'))
-    else:
-            form = DeportistaForm()
-    return render(request, 'deportistas.html', {'form': form})
+
 
 @csrf_exempt
 def add_user_view(request):
@@ -53,7 +48,6 @@ def add_user(request):
 
 @csrf_exempt
 def login_view(request):
-    print("Entro")
     if request.method == 'POST':
         jsonUser = json.loads(request.body)
         user_name = jsonUser['username']
@@ -74,3 +68,13 @@ def login_user(request):
 def logout_view(request):
     logout(request)
     return JsonResponse({"message": 'Ok'})
+
+
+class DeportistaDetailView(generic.DetailView):
+    model = Deportista
+
+    def get_context_data(self, **kwargs):
+        context = super(DeportistaDetailView, self).get_context_data(**kwargs)
+        context['participacion_list'] = Participacion.objects.all()
+        return context
+

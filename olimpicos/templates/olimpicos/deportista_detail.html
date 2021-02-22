@@ -1,0 +1,100 @@
+{% extends "base.html" %} {% block content %}
+<div class="columns">
+  <div class="column">
+  <a href='{% url "participaciones" %}'></a>
+    <div class="columns is-centered">
+      {% if deportista.foto %}
+      <div class="column">
+        <figure class="image is-256x256">
+          <img src="/{{ deportista.image }}" />
+        </figure>
+      </div>
+      {% else %}
+      <div class="column">
+        <figure class="image is-256x256">
+          <img src="{{ deportista.foto }}" />
+        </figure>
+      </div>
+      {% endif %}
+    </div>
+    <div class="columns is-centered">
+      <div class="column">
+        {% for icono in deportista.iconos %}
+        <div class="column-4">
+          <figure class="image is-64x64">
+            <img src="{{ icono }}" />
+          </figure>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+      <tr>
+        <td>Nombre</td>
+        <td>{{deportista.nombre}} {{ deportista.apellido }}</td>
+      </tr>
+      <tr>
+        <td>Lugar de nacimiento</td>
+        <td>{{deportista.lugar_nacimiento}}</td>
+      </tr>
+      <tr>
+        <td>Fecha de nacimiento</td>
+        <td>{{deportista.fecha_nacimiento}}</td>
+      </tr>
+      <tr>
+        <td>Edad</td>
+        <td>{{deportista.edad}}</td>
+      </tr>
+      <tr>
+        <td>Peso</td>
+        <td>{{deportista.peso}}</td>
+      </tr>
+      <tr>
+        <td>Estatura</td>
+        <td>{{deportista.estatura}}</td>
+      </tr>
+      <tr>
+        <td>Entrenador</td>
+        <td>{{deportista.entrenador}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="columns is-centered">
+  <div class="column">
+    <div class="columns">
+      <h2>Participaciones</h2>
+    </div>
+    <div class="columns is-centered">
+      <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+        <thead>
+          <tr>
+            <td>Fecha</td>
+            <td>Hora</td>
+            <td>Modalidad</td>
+            <td>Resultado</td>
+            <td>Video</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for participacion in participacion_list %}
+          <tr>
+          {% if participacion.deportista.id == deportista.id %}
+            <td>{{ participacion.fecha }}</td>
+            <td>{{ participacion.hora }}</td>
+            <td>{{ participacion.deporte.modalidad }}</td>
+            <td>{{ participacion.resultado }}</td>
+            <td>
+              <a href="/"><i class="fab fa-youtube"></i></a>
+            </td>
+          {% endif %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
