@@ -1,142 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <link href="/static/css/bulma.css" rel="stylesheet">
-</head>
-<body>
-<section class="hero is-fullheight is-dark">
-    <div class="hero-head">
-        <nav class="navbar">
-            <div class="container">
-                <div id="navbarMenuHeroA" class="navbar-menu">
-                    <div class="navbar-end">
-                        <a href="{% url 'deportista:deportistas' %}" class="navbar-item">
-                            Inicio
-                        </a>
-                        <a  href="{% url 'deportista:loginUser' %}" class="navbar-item">
-                            Login
-                        </a>
-                        <a href="{% url 'deportista:registrarUsuario' %}" class="navbar-item">
-                            Sign Up
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <div class="hero-body">
-        <div class="container has-text-centered">
-            <div class="column is-4 is-offset-4">
-                <h3 class="title">Registro</h3>
-                <div class="box is-dark">
-                    <form method="post" action="" onsubmit="return sendForm();">
-                        <div class="field">
-                            <div class="control">
-                                <input
-                                        class="input is-medium"
-                                        type="text"
-                                        id="username"
-                                        name="username"
-                                        placeholder="Usuario"
-                                />
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <input
-                                        class="input is-medium"
-                                        type="text"
-                                        id="first_name"
-                                        name="firs_name"
-                                        placeholder="Nombre"
-                                />
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <input
-                                        class="input is-medium"
-                                        type="text"
-                                        id="last_name"
-                                        name="last_name"
-                                        placeholder="Apellido"
-                                />
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <input
-                                        class="input is-medium"
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        placeholder="ejemplo@correo.com"
-                                />
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <input
-                                        class="input is-medium"
-                                        type="password"
-                                        id="password2"
-                                        name="password2"
-                                        placeholder="Contraseña"
-                                />
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <input
-                                        class="input is-medium"
-                                        type="password"
-                                        id="password"
-                                        name="password"
-                                        placeholder="Comprobación de contraseña"
-                                />
-                            </div>
-                        </div>
-                        <div class="columns">
-                            <div class="column is-half ">
-                                <input class="is-fullwidth button is-block is-info is-large"id="send" name="send" type="submit" value="login"/>
-                            </div>
-                            <div class="column is-half ">
-                                <a class="is-fullwidth button is-block is-danger is-large" href="https://agilesappandes.herokuapp.com/home/deportistas/">Cancelar</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+{% extends "base.html" %} {% block content %}
+<div class="container has-text-centered">
+  <div class="column is-4 is-offset-4">
+    <h3 class="title">Registro</h3>
+    <div class="box is-dark">
+      <form method="post" action="" onsubmit="return sendForm();">
+        <div class="field">
+          <div class="control">
+            <input
+              class="input is-medium"
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Usuario"
+              required
+            />
+          </div>
         </div>
+        <div class="field">
+          <div class="control">
+            <input
+              class="input is-medium"
+              type="text"
+              id="first_name"
+              name="firs_name"
+              placeholder="Nombre"
+              required
+            />
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input
+              class="input is-medium"
+              type="text"
+              id="last_name"
+              name="last_name"
+              placeholder="Apellido"
+              required
+            />
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input
+              class="input is-medium"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="ejemplo@correo.com"
+              required
+            />
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input
+              class="input is-medium"
+              type="password"
+              id="password2"
+              name="password2"
+              placeholder="Contraseña"
+              required
+            />
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input
+              class="input is-medium"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Comprobación de contraseña"
+              required
+            />
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-half">
+            <input
+              class="is-fullwidth button is-block is-info is-large"
+              id="send"
+              name="send"
+              type="submit"
+              value="Registrarse"
+            />
+          </div>
+          <div class="column is-half">
+            <a
+              class="is-fullwidth button is-block is-danger is-large"
+              href="/home/deportistas/"
+              >Cancelar</a
+            >
+          </div>
+        </div>
+      </form>
     </div>
-</section>
+  </div>
+</div>
 <script>
-    function sendForm() {
-        if($('#password').val() != $('#password2').val()){
-            alert('Las contraseñas no son iguales');
-            return false;
-        }
-        $.ajax({
-            type:"POST",
-            url: "https://agilesappandes.herokuapp.com/home/addUser/",
-            data: JSON.stringify({'username':$('#username').val(), 'first_name':$('#first_name').val(), 'last_name':$('#last_name').val(), 'password':$('#password').val(), 'email':$('#email').val()}),
-            contentType: "application/json; charset=utf-8",
-            dataType:"json",
-            success: function(data){
-                alert("Usuario registrado: "+ $("#username").val());
-                window.location = "https://agilesappandes.herokuapp.com/home/deportistas";
-            },
-            failure: function(errMsg)
-            {
-                print("Problema")
-                alert("Se presentó un problema");
-            }
-        });
-        return false
+  function sendForm() {
+    if ($("#password").val() != $("#password2").val()) {
+      alert("Las contraseñas no son iguales");
+      return false;
     }
+    $.ajax({
+      type: "POST",
+      url: "https://agilesappandes.herokuapp.com/home/addUser/",
+      data: JSON.stringify({
+        username: $("#username").val(),
+        first_name: $("#first_name").val(),
+        last_name: $("#last_name").val(),
+        password: $("#password").val(),
+        email: $("#email").val(),
+      }),
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      success: function (data) {
+        alert("Usuario registrado: " + $("#username").val());
+        window.location =
+          "https://agilesappandes.herokuapp.com/home/deportistas";
+      },
+      failure: function (errMsg) {
+        print("Problema");
+        alert("Se presentó un problema");
+      },
+    });
+    return false;
+  }
 </script>
-</body>
-</html>
+{% endblock %}

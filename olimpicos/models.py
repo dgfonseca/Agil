@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.forms import ModelForm
 from django.urls import reverse
 
-
 # Create your models here.
 
 class Modalidad(models.Model):
@@ -77,4 +76,4 @@ class Comentario(models.Model):
     estudiante = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return "Comentario: " + self.contenido
+        return "Comentario: " + self.contenido +" fecha: " + str(self.fecha) +" evento: " + str(self.evento) +" estudiante: " + str(self.estudiante)

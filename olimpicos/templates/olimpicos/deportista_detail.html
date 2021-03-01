@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block content %}
 <div class="columns">
   <div class="column">
-  <a href='{% url "participaciones" %}'></a>
+    <a href='{% url "participaciones" %}'></a>
     <div class="columns is-centered">
       {% if deportista.image == "" %}
       <div class="column">
@@ -81,7 +81,7 @@
         <tbody>
           {% for participacion in participacion_list %}
           <tr>
-          {% if participacion.deportista.id == deportista.id %}
+            {% if participacion.deportista.id == deportista.id %}
             <td>{{ participacion.fecha }}</td>
             <td>{{ participacion.hora }}</td>
             <td>{{ participacion.deporte.modalidad }}</td>
@@ -89,7 +89,7 @@
             <td>
               <a href="{{ participacion.evento.get_absolute_url }}">Video</a>
             </td>
-          {% endif %}
+            {% endif %}
           </tr>
           {% endfor %}
         </tbody>
