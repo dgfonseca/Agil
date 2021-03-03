@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <title>Login</title>
-      {% load static %}
-      <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
-      <link href="/static/css/bulma.css" rel="stylesheet" />
-      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="/static/css/bulma.css" rel="stylesheet" />
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
   <body>
     <section class="hero is-fullheight is-dark">
@@ -15,22 +16,13 @@
           <div class="container">
             <div id="navbarMenuHeroA" class="navbar-menu">
               <div class="navbar-end">
-                <a
-                  href="{% url 'deportistas' %}"
-                  class="navbar-item"
-                >
+                <a href="{% url 'deportistas' %}" class="navbar-item">
                   Inicio
                 </a>
-                <a href="{% url 'loginUser' %}" class="navbar-item">
-                  Login
-                </a>
-                <a
-                  href="{% url 'registrarUsuario' %}"
-                  class="navbar-item"
-                >
+                <a href="{% url 'loginUser' %}" class="navbar-item"> Login </a>
+                <a href="{% url 'registrarUsuario' %}" class="navbar-item">
                   Sign Up
                 </a>
-                  <a href='{% url 'participaciones' %}'></a>
               </div>
             </div>
           </div>
